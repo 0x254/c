@@ -1,8 +1,8 @@
 /*********************************************************************
-* Copyright C 2014 CFETS Financial Data Co.,LTD                      *
+* Copyright (C) 2014 CFETS Financial Data Co.,LTD                    *
 * All right reserved.                                                *
 * Name: if_dl.h
-* Author: Canux canuxcheng@gmail.com                                   *
+* Author: Canux canuxcheng@gmail.com                                 *
 * Version: V1.0                                                      *
 * Time: Wed 29 Oct 2014 09:54:31 PM CST
 * Description:                                                       *

@@ -1,8 +1,8 @@
 *********************************************************************
-* Copyright C 2014 CFETS Financial Data Co.,LTD                      *
+* Copyright (C) 2014 CFETS Financial Data Co.,LTD                    *
 * All right reserved.                                                *
 * Name: myipc.c
-* Author: Canux canuxcheng@gmail.com                                   *
+* Author: Canux canuxcheng@gmail.com                                 *
 * Version: V1.0                                                      *
 * Time: Thu 06 Nov 2014 02:03:04 PM CST
 * Description:                                                       *

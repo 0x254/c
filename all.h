@@ -1,8 +1,8 @@
 /*********************************************************************
-* Copyright C 2014 CFETS Financial Data Co.,LTD                      *
+* Copyright (C) 2014 CFETS Financial Data Co.,LTD                    *
 * All right reserved.                                                *
 * Name: all.h
-* Author: Canux canuxcheng@gmail.com                                   *
+* Author: Canux canuxcheng@gmail.com                                 *
 * Version: V1.0                                                      *
 * Time: Tue 28 Oct 2014 08:57:25 PM CST
 * Description:                                                       *

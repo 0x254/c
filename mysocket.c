@@ -1,8 +1,8 @@
 /*********************************************************************
-* Copyright C 2014 CFETS Financial Data Co.,LTD                      *
+* Copyright (C) 2014 CFETS Financial Data Co.,LTD                    *
 * All right reserved.                                                *
 * Name: mysocket.c
-* Author: Canux canuxcheng@gmail.com                                   *
+* Author: Canux canuxcheng@gmail.com                                 *
 * Version: V1.0                                                      *
 * Time: Mon 27 Oct 2014 11:30:41 AM CST
 * Description:                                                       *

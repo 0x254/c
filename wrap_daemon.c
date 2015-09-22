@@ -1,9 +1,9 @@
 /*********************************************************************
-* Copyright C 2014 CFETS Financial Data Co.,LTD                      *
+* Copyright (C) 2014 CFETS Financial Data Co.,LTD                    *
 * All right reserved.                                                *
 * File Name: daemon.c
 * Version:                                                           *
-* Writen by canux canuxcheng@gmail.com                                 *
+* Writen by canux canuxcheng@gmail.com                               *
 * Created Time: Fri 17 Oct 2014 11:39:33 AM CST
 * Description:                                                       *
 *********************************************************************/
