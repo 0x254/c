@@ -2,10 +2,10 @@
 * Copyright C 2014 CFETS Financial Data Co.,LTD
 * All right reserved.
 * File Name: myio.c
-* Version: 
+* Version:
 * Writen by canux canuxcheng@gmail.com
 * Created Time: 2014年08月30日 星期六 17时30分07秒
-* Description: 
+* Description:
 ************************************************************************/
 #include "all.h"
 
@@ -57,7 +57,7 @@ ssize_t readline(int fd, void *vptr, size_t maxlen)
 		else
 			return (-1);   /* error, errno set by read() */
 	}
-	
+
 	*ptr = 0;   /* null terminate like fgets() */
 	return (n);
 }

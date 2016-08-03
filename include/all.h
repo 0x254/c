@@ -17,7 +17,7 @@
 #include <unistd.h>   /* */
 #include <arpa/inet.h>   /* inet(3) functions */
 #include <netinet/in.h>   /* sockaddr_in{} and other Internet defns */
-#include <netinet/sctp.h> /* note if sctp does not exist we blow up :> */
+//#include <netinet/sctp.h> /* note if sctp does not exist we blow up :> */
 
 #include <sys/types.h>   /* basic system data types */
 #include <sys/socket.h>   /* basic socket definitions */
@@ -33,7 +33,7 @@
 
 #include <strings.h>
 #include <time.h>   /* timespec{} for pselect */
-#include <stdarg.h>  /* ISO C variable arguments */   
+#include <stdarg.h>  /* ISO C variable arguments */
 #include <syslog.h>   /* */
 #include <stdio.h>   /* */
 #include <errno.h>   /* */
@@ -70,7 +70,10 @@
 
 #include <termios.h> /* for terminal */
 
-#include <gdbm-ndbm.h> /* for ndbm */
+//#include <gdbm.h> /* for gdbm */
+//#include <gdbm-ndbm.h> /* for ndbm */
+
+//#include <curses.h> /* for ncurses */
 
 /* POSIX requires that an #include of <poll.h> DefinE INFTIM, but many
  * systems still DefinE it in <sys/stropts.h>.  We don't want to include
@@ -123,7 +126,7 @@
 
 /* macro */
 #define min(a,b) ((a) < (b) ? (a) : (b))
-#define max(a,b) ((a) > (b) ? (a) : (b)) 
+#define max(a,b) ((a) > (b) ? (a) : (b))
 
 /* Following could be derived from SOMAXCONN in <sys/socket.h>, but many kernels still $define it as 5, while actually supporting many more */
 #define LISTENQ 1024   /* 2nd argument to listen() */
@@ -131,12 +134,12 @@
 /* Miscellaneous constants */
 #define MAXLINE 4096   /* max text line length */
 #define BUFFSIZE 8192   /* buffer size for reads and writes */
-#define MAXSOCKADDR 128   /* max socket address structure size */ 
+#define MAXSOCKADDR 128   /* max socket address structure size */
 
 /* Define some port number that can be used for our examples */
 #define SERV_PORT 9877   /* TCP and UDP client-servers */
 #define SERV_PORT_STR "9877"   /* TCP and UDP clientservers */
-#define SCTP_PDAPI_INCR_SZ 65535   /* increment size for pdapi when adding buf space */ 
+#define SCTP_PDAPI_INCR_SZ 65535   /* increment size for pdapi when adding buf space */
 #define SCTP_PDAPI_NEED_MORE_THRESHOLD 1024   /* need more space threshold */
 #define SERV_MAX_SCTP_STRM 10   /* normal maximum streams */
 #define SERV_MOR_STRMS_SCTP 20   /* larger number of streams */
@@ -155,22 +158,26 @@
 #define DIR_MODE (FILE_MODE | S_IXUSR | S_IXGRP | S_IXOTH)
 
 /* for linux system v message */
+/*
 struct msgbuf
 {
 	long mtype;
 	char mtext[1];
 };
+*/
 
 #define MSG_R 0400
 #define MSG_W 0200
 #define SVMSG_MODE (MSG_R | MSG_W | MSG_R >> 3 | MSG_R >> 6)
 
 /* for system v semaphore */
+/*
 union semun {
 	int val;
 	struct semid_ds *buf;
 	unsigned short *array;
 };
+*/
 
 #define SEM_R 0400
 #define SEM_A 0200
@@ -184,10 +191,10 @@ union semun {
 typedef void Sigfunc(int);
 
 /****************************************************
- * prototypes for our own library wrapper functions 
+ * prototypes for our own library wrapper functions
 *****************************************************/
 
-/* C lib function package function */ 
+/* C lib function package function */
 ssize_t readline(int, void *, size_t);
 ssize_t readn(int, void *, size_t);
 ssize_t writen(int, const void *, size_t);
