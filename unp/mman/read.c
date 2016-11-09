@@ -1,0 +1,32 @@
+/*********************************************************************
+* Copyright (C) 2014 CFETS Financial Data Co.,LTD                    *
+* All right reserved.                                                *
+* Name: read.c
+* Author: Canux canuxcheng@gmail.com                                 *
+* Version: V1.0                                                      *
+* Time: Wed 03 Dec 2014 11:18:23 AM CST
+* Description:                                                       *
+*********************************************************************/
+#include "all.h"
+
+int main(int argc, char **argv)
+{
+	int i, fd;
+	struct stat stat;
+	unsigned char c, *ptr;
+
+	if (argc != 2)
+		err_quit("Usage: read <name>");
+
+	//open, get size, map
+	fd = Shm_open(argv[1], O_RDONLY, FILE_MODE);
+	Fstat(fd, &stat);
+	ptr = Mmap(NULL, stat.st_size, PROT_READ, MAP_SHARED, fd, 0);
+	Close(fd);
+
+	//check teh ptr[0] = 0, ptr[1] = 1, etc.
+	for (i = 0; i < stat.st_size; i++)
+		if ((c = *ptr++) != (i % 256))
+			err_ret("ptr[%d] = %d", i, c);
+	exit(0);
+}
